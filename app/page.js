@@ -105,7 +105,7 @@ export default function Home() {
                       href="mailto:info@fernweh-turismo.com" 
                       className="hover:text-white transition-colors"
                     >
-                      info@fernweh-turismo.com
+                      info@fernwehtourism.com
                     </a>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ export default function Home() {
                       href="tel:+1234567890" 
                       className="hover:text-white transition-colors"
                     >
-                      +123 456 7890
+                      +573214148616
                     </a>
                   </div>
                 </div>
