@@ -7,10 +7,7 @@ const FernwehHomepage = () => {
       {/* Header */}
       <header className="bg-gradient-to-r from-blue-600 to-green-500 text-white">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <img src="/api/placeholder/60/60" alt="Fernweh Logo" className="w-12 h-12 rounded-full" />
-            <h1 className="text-xl font-bold">Fernweh Tourism</h1>
-          </div>
+
           <div className="hidden md:flex space-x-6">
             <a href="#inicio" className="hover:text-yellow-300 transition">Inicio</a>
             <a href="#sobre-nosotros" className="hover:text-yellow-300 transition">Sobre Nosotros</a>
@@ -24,6 +21,9 @@ const FernwehHomepage = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-green-50 py-20">
         <div className="container mx-auto px-4 text-center">
+          <div className="flex justify-center mb-8">
+            <img src="/logo.png" alt="Fernweh Logo" className="w-40 h-40 rounded-full" />
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
             Viajes Personalizados a Todo Destino
           </h1>
@@ -101,11 +101,13 @@ const FernwehHomepage = () => {
                 <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Acompañamiento virtual</li>
                 <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Regalo personalizado</li>
               </ul>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">
-                Más Información
-              </button>
+              <a href="http://wa.me/message/57G4XU2DXK5NF1" target="_blank" rel="noopener noreferrer">
+                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">
+                  Más Información
+                </button>
+              </a>
             </div>
-            
+
             {/* Package 2 */}
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h3 className="text-2xl font-bold mb-4 text-green-600">Viajes Personalizados</h3>
@@ -118,16 +120,18 @@ const FernwehHomepage = () => {
                 <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Todos los trayectos incluidos</li>
                 <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Acompañamiento completo</li>
               </ul>
-              <button className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition">
-                Más Información
-              </button>
+              <a href="http://wa.me/message/57G4XU2DXK5NF1" target="_blank" rel="noopener noreferrer">
+                <button className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition">
+                  Más Información
+                </button>
+              </a>
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Stats Section */}
-      <section className="py-16 bg-blue-600 text-white">
+      < section className="py-16 bg-blue-600 text-white" >
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
@@ -144,10 +148,10 @@ const FernwehHomepage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Testimonials Preview */}
-      <section className="py-16 bg-white" id="testimonios">
+      < section className="py-16 bg-white" id="testimonios" >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Testimonios</h2>
@@ -173,10 +177,10 @@ const FernwehHomepage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Contact Section */}
-      <section className="py-16 bg-gradient-to-r from-green-500 to-blue-600 text-white" id="contacto">
+      < section className="py-16 bg-gradient-to-r from-green-500 to-blue-600 text-white" id="contacto" >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-8">¡Contáctanos!</h2>
           <p className="text-xl mb-8">¿Listo para crear el viaje de tus sueños?</p>
@@ -186,27 +190,33 @@ const FernwehHomepage = () => {
               <span>fernwehviajes.co@gmail.com</span>
             </div>
             <div className="flex space-x-4">
-              <Instagram className="w-6 h-6 hover:text-yellow-300 cursor-pointer" />
-              <Facebook className="w-6 h-6 hover:text-yellow-300 cursor-pointer" />
+              <a href='https://www.instagram.com/fernwehtourism/'>
+                <Instagram className="w-6 h-6 hover:text-yellow-300 cursor-pointer" />
+              </a>
+              <a href='https://www.facebook.com/profile.php?id=100089436862690'>
+                <Facebook className="w-6 h-6 hover:text-yellow-300 cursor-pointer" />
+              </a>
             </div>
           </div>
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full text-lg transition">
-            WhatsApp
-          </button>
+          <a href="http://wa.me/message/57G4XU2DXK5NF1" target="_blank" rel="noopener noreferrer">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full text-lg transition">
+              WhatsApp
+            </button>
+          </a>
         </div>
-      </section>
+      </section >
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8">
+      < footer className="bg-gray-800 text-white py-8" >
         <div className="container mx-auto px-4 text-center">
           <p>&copy; 2025 Fernweh Tourism SAS. Todos los derechos reservados.</p>
           <div className="flex justify-center space-x-6 mt-4">
-            <a href="#" className="text-gray-400 hover:text-white transition">Términos y Condiciones</a>
-            <a href="#" className="text-gray-400 hover:text-white transition">Política de Privacidad</a>
+            <a href="https://drive.google.com/file/d/17rh-oS8wtpdNdw03eRX7Xp-1QUzjIyFI/view" className="text-gray-400 hover:text-white transition">Términos y Condiciones</a>
+            <a href="https://drive.google.com/file/d/1rje5DqR0YdO4q0EJvXKJs0u7sjkoc5e-/view" className="text-gray-400 hover:text-white transition">Política de Privacidad</a>
           </div>
         </div>
-      </footer>
-    </div>
+      </footer >
+    </div >
   );
 };
 
