@@ -1,184 +1,213 @@
-'use client'
+import React from 'react';
+import { Mail, Phone, Instagram, Facebook } from 'lucide-react';
 
-import { useState } from 'react'
-
-export default function Home() {
-  const [email, setEmail] = useState('')
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const handleEmailSubmit = (e) => {
-    e.preventDefault()
-    if (email) {
-      setIsSubmitted(true)
-      // Aquí se integrará con el backend en el futuro
-      setTimeout(() => {
-        setIsSubmitted(false)
-        setEmail('')
-      }, 3000)
-    }
-  }
-
+const FernwehHomepage = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="w-full py-6 px-4 animate-fade-in">
-        <div className="max-w-6xl mx-auto flex justify-center">
-          <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-white text-shadow-lg">
-              ✈️ Fernweh Tourism
-            </h1>
-            <p className="text-white/80 text-sm md:text-base mt-2">
-              Tu próxima aventura comienza aquí
-            </p>
+      <header className="bg-gradient-to-r from-blue-600 to-green-500 text-white">
+        <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="flex items-center space-x-2">
+            <img src="/api/placeholder/60/60" alt="Fernweh Logo" className="w-12 h-12 rounded-full" />
+            <h1 className="text-xl font-bold">Fernweh Tourism</h1>
           </div>
-        </div>
+          <div className="hidden md:flex space-x-6">
+            <a href="#inicio" className="hover:text-yellow-300 transition">Inicio</a>
+            <a href="#sobre-nosotros" className="hover:text-yellow-300 transition">Sobre Nosotros</a>
+            <a href="#paquetes" className="hover:text-yellow-300 transition">Paquetes</a>
+            <a href="#testimonios" className="hover:text-yellow-300 transition">Testimonios</a>
+            <a href="#contacto" className="hover:text-yellow-300 transition">Contacto</a>
+          </div>
+        </nav>
       </header>
 
-      {/* Main Content */}
-      <main className="flex-1 flex items-center justify-center px-4 py-8">
-        <div className="max-w-4xl mx-auto text-center space-y-8 animate-slide-up">
-          
-          {/* Icono de construcción animado */}
-          <div className="construction-icon text-6xl md:text-8xl mb-8">
-            🏗️
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-blue-50 to-green-50 py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+            Viajes Personalizados a Todo Destino
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            ¡Sé dueño de tu tiempo y de tu libertad! En Fernweh Tourism planeamos y armamos tu viaje a la medida, según tus posibilidades.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full text-lg transition">
+              Planea tu Viaje
+            </button>
+            <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-3 px-8 rounded-full text-lg transition">
+              Ver Paquetes
+            </button>
           </div>
+        </div>
+      </section>
 
-          {/* Mensaje principal */}
-          <div className="space-y-4">
-            <h2 className="text-4xl md:text-6xl font-bold text-white text-shadow-lg gradient-text">
-              Estamos construyendo algo increíble
+      {/* Value Proposition */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              ¿Por qué viajar con Fernweh?
             </h2>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed text-shadow">
-              Nuestra agencia de turismo está preparando experiencias únicas para convertir 
-              tus sueños de viaje en realidad. Pronto estaremos listos para llevarte a 
-              descubrir los destinos más extraordinarios del mundo.
-            </p>
           </div>
-
-          {/* Formulario de email */}
-          <div className="max-w-md mx-auto space-y-4">
-            <h3 className="text-xl md:text-2xl text-white font-semibold">
-              ¡Sé el primero en conocer nuestras novedades!
-            </h3>
-            
-            {!isSubmitted ? (
-              <form onSubmit={handleEmailSubmit} className="email-form glass-effect rounded-lg p-6">
-                <div className="space-y-4">
-                  <input
-                    type="email"
-                    placeholder="tu-email@ejemplo.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="input-field"
-                    required
-                  />
-                  <button
-                    type="submit"
-                    className="btn-primary w-full"
-                  >
-                    Notifícame cuando esté listo 🚀
-                  </button>
-                </div>
-              </form>
-            ) : (
-              <div className="glass-effect rounded-lg p-6 animate-pulse-slow">
-                <div className="text-white text-lg">
-                  ✅ ¡Gracias! Te notificaremos pronto
-                </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🎯</span>
               </div>
-            )}
-          </div>
-
-          {/* Información de contacto */}
-          <div className="glass-effect rounded-lg p-6 md:p-8 max-w-2xl mx-auto">
-            <h3 className="text-xl md:text-2xl text-white font-semibold mb-6">
-              ¿Tienes alguna pregunta? ¡Contáctanos!
-            </h3>
-            
-            <div className="grid md:grid-cols-2 gap-6 text-white/90">
-              <div className="space-y-3">
-                <div className="flex items-center justify-center md:justify-start space-x-3">
-                  <span className="text-2xl">📧</span>
-                  <div>
-                    <p className="font-semibold">Email</p>
-                    <a 
-                      href="mailto:info@fernweh-turismo.com" 
-                      className="hover:text-white transition-colors"
-                    >
-                      info@fernwehtourism.com
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-center md:justify-start space-x-3">
-                  <span className="text-2xl">📱</span>
-                  <div>
-                    <p className="font-semibold">Teléfono</p>
-                    <a 
-                      href="tel:+1234567890" 
-                      className="hover:text-white transition-colors"
-                    >
-                      +573214148616
-                    </a>
-                  </div>
-                </div>
+              <h3 className="text-xl font-bold mb-3">100% Personalizado</h3>
+              <p className="text-gray-600">
+                No encontrarás paquetes estandarizados. Armamos viajes a tu medida, según tus necesidades, tiempo y presupuesto.
+              </p>
+            </div>
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🌍</span>
               </div>
-              
-              <div className="space-y-3">
-                <p className="font-semibold text-center md:text-left">Síguenos en redes sociales</p>
-                <div className="flex justify-center md:justify-start space-x-4">
-                  <a href="#" className="social-icon" title="Instagram">
-                    📷
-                  </a>
-                  <a href="#" className="social-icon" title="Facebook">
-                    👍
-                  </a>
-                  <a href="#" className="social-icon" title="WhatsApp">
-                    💬
-                  </a>
-                </div>
+              <h3 className="text-xl font-bold mb-3">Sin Limitaciones</h3>
+              <p className="text-gray-600">
+                Diseñamos viajes a cualquier destino dentro y fuera de Colombia. Los límites los pones tú.
+              </p>
+            </div>
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🤝</span>
               </div>
+              <h3 className="text-xl font-bold mb-3">Acompañamiento Total</h3>
+              <p className="text-gray-600">
+                Te acompañamos desde la planeación hasta el viaje. Asesoría en visados, seguros y recomendaciones.
+              </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Call to action adicional */}
-          <div className="space-y-4">
-            <p className="text-white/80 text-lg">
-              Mientras tanto, puedes seguirnos en redes sociales para no perderte ninguna novedad
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-secondary animate-float">
-                📱 Síguenos en Instagram
+      {/* Packages Preview */}
+      <section className="py-16 bg-gray-50" id="paquetes">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Nuestros Paquetes</h2>
+            <p className="text-gray-600">Servicios nacionales e internacionales para todo tipo de presupuestos</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Package 1 */}
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h3 className="text-2xl font-bold mb-4 text-blue-600">Viajes Pre-armados</h3>
+              <p className="text-gray-600 mb-6">
+                Perfecto para viajes a parques temáticos, cruceros, resorts todo incluido y escapadas menores a 7 días.
+              </p>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>3 cotizaciones gratuitas</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Opciones de seguro médico</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Acompañamiento virtual</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Regalo personalizado</li>
+              </ul>
+              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">
+                Más Información
               </button>
-              <button className="btn-secondary animate-float" style={{animationDelay: '0.5s'}}>
-                💬 Chatea con nosotros
+            </div>
+            
+            {/* Package 2 */}
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h3 className="text-2xl font-bold mb-4 text-green-600">Viajes Personalizados</h3>
+              <p className="text-gray-600 mb-6">
+                Circuitos personalizados mayores a 7 días con itinerario diseñado especialmente para ti.
+              </p>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>1-2 rutas posibles</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>3 opciones de alojamiento</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Todos los trayectos incluidos</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Acompañamiento completo</li>
+              </ul>
+              <button className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition">
+                Más Información
               </button>
             </div>
           </div>
         </div>
-      </main>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-blue-600 text-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div>
+              <h3 className="text-4xl font-bold mb-2">60+</h3>
+              <p className="text-blue-100">Viajes planeados en los 5 continentes</p>
+            </div>
+            <div>
+              <h3 className="text-4xl font-bold mb-2">50+</h3>
+              <p className="text-blue-100">Clientes satisfechos</p>
+            </div>
+            <div>
+              <h3 className="text-4xl font-bold mb-2">130+</h3>
+              <p className="text-blue-100">Proveedores a nivel mundial</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Preview */}
+      <section className="py-16 bg-white" id="testimonios">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Testimonios</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <p className="text-gray-600 mb-4 italic">
+                "La experiencia de haber confiado nuestras vacaciones en Fernweh fue la mejor..."
+              </p>
+              <p className="font-semibold">Cliente Satisfecho</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <p className="text-gray-600 mb-4 italic">
+                "Experiencia divertida con muy buen acompañamiento desde la agencia..."
+              </p>
+              <p className="font-semibold">Cliente Feliz</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <p className="text-gray-600 mb-4 italic">
+                "Después de un lindo viaje y ya descansada en casa, les quiero dar las gracias..."
+              </p>
+              <p className="font-semibold">Viajera Contenta</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 bg-gradient-to-r from-green-500 to-blue-600 text-white" id="contacto">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-8">¡Contáctanos!</h2>
+          <p className="text-xl mb-8">¿Listo para crear el viaje de tus sueños?</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <div className="flex items-center space-x-2">
+              <Mail className="w-5 h-5" />
+              <span>fernwehviajes.co@gmail.com</span>
+            </div>
+            <div className="flex space-x-4">
+              <Instagram className="w-6 h-6 hover:text-yellow-300 cursor-pointer" />
+              <Facebook className="w-6 h-6 hover:text-yellow-300 cursor-pointer" />
+            </div>
+          </div>
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full text-lg transition">
+            WhatsApp
+          </button>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer className="w-full py-8 px-4 mt-16">
-        <div className="max-w-6xl mx-auto text-center space-y-4">
-          <div className="glass-effect rounded-lg p-6">
-            <p className="text-white/80 text-sm md:text-base">
-              © 2024 Fernweh - Agencia de Turismo. Todos los derechos reservados.
-            </p>
-            <p className="text-white/60 text-xs md:text-sm mt-2">
-              Sitio web en construcción - Próximamente disponible
-            </p>
-          </div>
-          
-          <div className="flex justify-center space-x-6 text-white/60 text-sm">
-            <a href="#" className="hover:text-white transition-colors">Política de Privacidad</a>
-            <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">Términos de Servicio</a>
-            <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">Contacto</a>
+      <footer className="bg-gray-800 text-white py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p>&copy; 2025 Fernweh Tourism SAS. Todos los derechos reservados.</p>
+          <div className="flex justify-center space-x-6 mt-4">
+            <a href="#" className="text-gray-400 hover:text-white transition">Términos y Condiciones</a>
+            <a href="#" className="text-gray-400 hover:text-white transition">Política de Privacidad</a>
           </div>
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
+
+export default FernwehHomepage;
