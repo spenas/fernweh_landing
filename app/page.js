@@ -88,7 +88,7 @@ const FernwehHomepage = () => {
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Nuestros Paquetes</h2>
             <p className="text-gray-600">Servicios nacionales e internacionales para todo tipo de presupuestos</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {/* Package 1 */}
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h3 className="text-2xl font-bold mb-4 text-blue-600">Viajes Pre-armados</h3>
@@ -98,7 +98,8 @@ const FernwehHomepage = () => {
               <ul className="space-y-2 mb-6">
                 <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>3 cotizaciones gratuitas</li>
                 <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Opciones de seguro médico</li>
-                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Acompañamiento virtual</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Recomendaciones de restaurantes y consejos generales para el viaje</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Acompañamiento completo durante todo el viaje</li>
                 <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Regalo personalizado</li>
               </ul>
               <a href="http://wa.me/message/57G4XU2DXK5NF1" target="_blank" rel="noopener noreferrer">
@@ -118,10 +119,31 @@ const FernwehHomepage = () => {
                 <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>1-2 rutas posibles</li>
                 <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>3 opciones de alojamiento</li>
                 <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Todos los trayectos incluidos</li>
-                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Acompañamiento completo</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Opciones de seguro medico</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Acompañamiento completo durante todo el viaje</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Regalo personalizado</li>
               </ul>
               <a href="http://wa.me/message/57G4XU2DXK5NF1" target="_blank" rel="noopener noreferrer">
                 <button className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition">
+                  Más Información
+                </button>
+              </a>
+            </div>
+            {/* Package 3*/}
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h3 className="text-2xl font-bold mb-4 text-purple-600">Tramitamos tu visa sin estrés.</h3>
+              <p className="text-gray-600 mb-6">
+                Asesoria y acompañamiento en la solicitud de visas de turismo para:
+              </p>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Estados Unidos</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Reino Unido</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Canadá</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Japón</li>
+                <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Y más</li>
+              </ul>
+              <a href="http://wa.me/message/57G4XU2DXK5NF1" target="_blank" rel="noopener noreferrer">
+                <button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition">
                   Más Información
                 </button>
               </a>
